@@ -1,4 +1,4 @@
-FROM 535810869599.dkr.ecr.us-west-2.amazonaws.com/node_14_alpine:latest
+FROM 535810869599.dkr.ecr.us-west-2.amazonaws.com/node_14_alpine
 RUN mkdir -p /usr/src/app
 WORKDIR /usr/src/app
 COPY . .
