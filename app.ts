@@ -29,7 +29,7 @@ app.get('/', async (req, res) => {
 // app.listen(port, () => {
 //     console.log(`Example app listening at http://localhost:${port}`);
 // });
-const mongoPath = "mongodb://ec2-34-214-191-240.us-west-2.compute.amazonaws.com:27017/test";
+const mongoPath = "mongodb://admin:5gc6w987@ec2-34-214-191-240.us-west-2.compute.amazonaws.com:27017/test";
 
 const bootServer = async () => {
     await mongoose.connect(mongoPath);
