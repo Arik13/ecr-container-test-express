@@ -22,6 +22,10 @@ phases:
             - echo Pushing the Docker image...
             - docker push $IMAGE_URI
             - printf '[{"name":"nginx","imageUri":"%s"}]' "$IMAGE_URI" > images.json
-            - $(aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --force-new-deployment --desired-count 1)
+            - echo $CLUSTER_NAME
+            - echo $SERVICE_NAME
+            - $(aws ecs update-service help)
+            - aws ecs update-service help
+            - $(aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --desired-count 1 --force-new-deployment)
 artifacts:
     files: images.json
