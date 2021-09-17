@@ -24,8 +24,9 @@ phases:
             - printf '[{"name":"nginx","imageUri":"%s"}]' "$IMAGE_URI" > images.json
             - echo $CLUSTER_NAME
             - echo $SERVICE_NAME
+            - aws ecs help
+            - $(aws ecs help)
             - $(aws ecs update-service help)
-            - aws ecs update-service help
             - $(aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --desired-count 1 --force-new-deployment)
 artifacts:
     files: images.json
