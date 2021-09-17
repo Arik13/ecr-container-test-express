@@ -23,7 +23,7 @@ app.get('/', async (req, res) => {
     let query = await TestModel.find();
     let response = `<h1>Hello World!</h1> ${query}`;
     // res.send(response);
-    res.send("<h1>Hello World! (Test)</h1>");
+    res.send("<h1>Hello World! Test</h1>");
 });
 
 // app.listen(port, () => {
