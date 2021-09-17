@@ -29,7 +29,7 @@ app.get('/', async (req, res) => {
 // app.listen(port, () => {
 //     console.log(`Example app listening at http://localhost:${port}`);
 // });
-const dbURL = "ip-10-0-0-155.us-west-2.compute.internal";
+const dbURL = "ec2-34-220-160-64.us-west-2.compute.amazonaws.com";
 const dbUser = "admin";
 const dbPassword = "5gc6w987"
 const dbName = "test"
