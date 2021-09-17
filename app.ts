@@ -34,11 +34,13 @@ const dbUser = "admin";
 const dbPassword = "5gc6w987"
 const dbName = "test"
 const dbPort = 27017;
-
 const mongoPath = `mongodb://${dbUser}:${dbPassword}@${dbURL}:${dbPort}/${dbName}`;
 
 const bootServer = async () => {
-    await mongoose.connect(mongoPath);
+    await mongoose.connect(mongoPath, {
+        authSource: "admin",
+        readPreference: "primary",
+    });
     app.listen(port);
     console.info("Connected to mongodb");
     console.info(`Server active on port ${port}`);
