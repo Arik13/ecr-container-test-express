@@ -68,8 +68,7 @@
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script>
-        var socket = io();
-
+        var socket = io("http://network-alb-1rth4edb32uwi-1963471341.us-west-2.elb.amazonaws.com:3000");
         var messages = document.getElementById('messages');
         var form = document.getElementById('form');
         var input = document.getElementById('input');
