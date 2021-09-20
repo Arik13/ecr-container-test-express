@@ -41,7 +41,7 @@ app.get('/', (req, res) => {
 // app.listen(port, () => {
 //     console.log(`Example app listening at http://localhost:${port}`);
 // });
-const dbURL = "ec2-34-220-160-64.us-west-2.compute.amazonaws.com";
+const dbURL = "ec2-52-12-127-9.us-west-2.compute.amazonaws.com";
 const dbUser = "admin";
 const dbPassword = "5gc6w987"
 const dbName = "test"
