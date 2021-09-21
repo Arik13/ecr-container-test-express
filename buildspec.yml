@@ -13,6 +13,7 @@ phases:
             - git --version
             - git clone "https://$GIT_AUTH_TOKEN@github.com/vtt-app/vtt_shared.git"
             - ls
+            - echo $pwd
 
     build:
         commands:
