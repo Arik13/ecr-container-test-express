@@ -10,6 +10,7 @@ phases:
             - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin "$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com"
             - CODEBUILD_RESOLVED_SOURCE_VERSION="${CODEBUILD_RESOLVED_SOURCE_VERSION:-$IMAGE_TAG}"
             - IMAGE_URI="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG"
+            - ls
     build:
         commands:
             - echo Build started on `date`
@@ -21,7 +22,7 @@ phases:
             - echo Build stage successfully completed on `date`
             - echo Pushing the Docker image...
             - docker push $IMAGE_URI
-            - printf '[{"name":"nginx","imageUri":"%s"}]' "$IMAGE_URI" > images.json
+            # - printf '[{"name":"nginx","imageUri":"%s"}]' "$IMAGE_URI" > images.json
             - aws ecs update-service --cluster $CLUSTER_NAME --service $SERVICE_NAME --desired-count 1 --force-new-deployment
 artifacts:
     files: images.json
