@@ -11,7 +11,7 @@ phases:
             - CODEBUILD_RESOLVED_SOURCE_VERSION="${CODEBUILD_RESOLVED_SOURCE_VERSION:-$IMAGE_TAG}"
             - IMAGE_URI="$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$IMAGE_REPO_NAME:$IMAGE_TAG"
             - git --version
-            - git clone https://github.com/arik13/vtt_shared.git
+            - git clone https://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@github.com/vtt-app/vtt_shared.git
             - ls
 
     build:
